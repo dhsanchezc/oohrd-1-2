@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+
+{% block title %} Lista de clientes {% endblock %}
+
+{% block contents %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Correo</th>
+            <th>Comida favorita</th>
+            <th colspan="2"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{customer.name}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.favorite_food}}</td>
+            <td><a name="" id="" href="{% url 'update' customer.id %}">Editar</a></td>
+            <td><a name="" id="" href="{% url 'delete' customer.id %}">Eliminar</a></td>            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

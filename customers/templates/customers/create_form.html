@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block titulo %} Agregar un cliente {% endblock %}
+
+{% block contents %}
+
+<div>
+    <h1>
+        Crear un cliente
+    </h1>
+    <div>
+        <h2>Datos del cliente</h2>
+        {% include 'customers/form.html' %}
+    </div>
+</div>
+
+{% endblock %}

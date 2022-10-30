@@ -1,0 +1,15 @@
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div>
+        <label>{{ field.label }}</label>
+        <input name="{{ field.name }}" id="" aria-describedby="helpId" placeholder="{{ field.label }}"
+            value="{{ field.value | default:'' }}" autocomplete="off">
+    </div>
+    <div>{{ field.errors }}</div>
+    {% endfor %}
+
+    <input name="" id="" type="submit" value="Crear">
+
+</form>
